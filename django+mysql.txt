@@ -1,0 +1,33 @@
+djangorestFramework + mysql
+
+pip install corsheaders
+pip install pymysql---to connect with sql
+
+//settings.py
+import pymysql
+pymysql.install_as_MySQLdb()
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'bx9kq1wvr4ivi9kbw9ak' ,
+        'USER':'uwmzkqc6k9svezdl' ,
+        'PASSWORD':'3xKe7mvG0JUgGZr62JVB',
+        'HOST':'bx9kq1wvr4ivi9kbw9ak-mysql.services.clever-cloud.com',
+        'PORT':'3306'
+    }
+}
+
+//if this error occurs: 
+django.core.exceptions.ImproperlyConfigured: mysqlclient 1.4.0 or newer is required; you have 0.10.1.
+ #here is latest version of pymysql in mysqldb.
+ #add this settings in settings file
+ import pymysql
+ pymysql.version_info = (1, 4, 6, 'final', 0)
+ pymysql.install_as_MySQLdb()
+
+//Serializers:
+helps to convert complex model types and model instances into native python datatype which can then be rendered into json or xml..
+this also helps in deserialization which is conversion from python datatype into complex types and model instances
+
+//from django.views.decorators.csrf import csrf_exempt
+csrf decorator to allow other domains to access our api methods
